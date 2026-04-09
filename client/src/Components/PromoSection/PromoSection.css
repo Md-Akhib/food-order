@@ -1,0 +1,134 @@
+.promo-wrapper {
+    background-color: #0d8a3e;
+    background-image: url("../../assets/cta-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.promo-content {
+    flex: 1;
+    max-width: 55%;;
+    z-index: 2;
+}
+
+.promo-subtitle {
+    color: #ffc107;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.promo-heading {
+    color: #ffffff;
+    font-size: 45px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+}
+
+.promo-heading .highlighted-text {
+    color: #ffc107;
+}
+
+.promo-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.promo-btn:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.promo-visual {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+    max-width: 40%;
+}
+
+.delivery-rider-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablets and medium screens */
+@media (max-width: 1024px) {
+    .promo-wrapper {
+        padding: 40px 50px;
+    }
+
+    .promo-heading {
+        font-size: 42px;
+    }
+}
+
+/* Small screens / Mobile devices */
+@media (max-width: 850px) {
+    .promo-wrapper {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 30px;
+    }
+
+    .promo-content {
+        max-width: 100%;
+    }
+
+    .promo-heading {
+        font-size: 36px;
+    }
+
+    .promo-btn {
+        margin: 0 auto;
+    }
+
+    /* Hide the delivery boy image entirely on small screens */
+    .promo-visual,
+    .delivery-rider-img {
+        display: none;
+    }
+}
+
+@media (max-width: 477px) {
+
+    /* Utilizing your existing section padding reduction for smaller screens */
+    .promo-wrapper {
+        padding: 30px 20px;
+    }
+
+    .promo-heading {
+        font-size: 28px;
+    }
+}

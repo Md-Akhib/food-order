@@ -1,0 +1,120 @@
+/* --- Base Navbar Layout --- */
+.admin-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.admin-nav-left img {
+    height: 40px;
+    width: auto;
+}
+
+.admin-nav-left h1:hover {
+    opacity: 0.8;
+}
+
+.admin-nav-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.admin-nav-center h4 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #4b5563;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: 1px solid #e5e7eb;
+    padding: 6px 16px;
+    border-radius: 50px;
+    background-color: #f9fafb;
+}
+
+.admin-nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.admin-profile-icon {
+    font-size: 1.8rem;
+    color: #0b0f24;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.admin-profile-icon:hover {
+    color: #ff7575;
+    transform: scale(1.05);
+}
+
+.admin-nav-center button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #ff7575;
+    color: white;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.admin-nav-center button:hover {
+    background-color: #ff5555;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .admin-navbar {
+        padding: 15px 20px;
+    }
+
+    .admin-nav-left h1 {
+        font-size: 1.4rem;
+    }
+
+    .admin-nav-center h4 {
+        font-size: 0.85rem;
+        padding: 5px 12px;
+        letter-spacing: 1px;
+    }
+
+    .admin-profile-icon {
+        font-size: 1.6rem;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    .admin-navbar {
+        padding: 12px 15px;
+    }
+
+    .admin-nav-left h1 {
+        font-size: 1.3rem;
+    }
+
+    .admin-nav-center h4 {
+        display: none;
+    }
+
+    .admin-profile-icon {
+        font-size: 1.5rem;
+    }
+}

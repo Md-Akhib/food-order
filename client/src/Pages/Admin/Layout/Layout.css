@@ -1,0 +1,41 @@
+.admin-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Forces the layout to be exactly the viewport height */
+}
+
+.admin-layout-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    /* Prevents the whole body from scrolling */
+}
+
+.admin-layout-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    /* Makes ONLY the content area scroll */
+    background-color: white;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .admin-layout {
+        height: auto;
+        /* Revert to natural height for mobile */
+        min-height: 100vh;
+    }
+
+    .admin-layout-body {
+        flex-direction: column;
+        overflow: visible;
+        /* Allows standard page scroll on mobile */
+    }
+
+    .admin-layout-content {
+        padding: 15px;
+        overflow-y: visible;
+    }
+}

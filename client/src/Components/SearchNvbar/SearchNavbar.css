@@ -1,0 +1,148 @@
+.search-nav-header {
+    height: 60px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    left: 0;
+    z-index: 999;
+}
+
+.search-nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    gap: 15px;
+    /* Adds space between back button and search form */
+}
+
+/* --- Back Button Styles --- */
+.search-nav-back-btn {
+    background: transparent;
+    border: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.search-nav-back-btn:hover {
+    background-color: #f1f3f5;
+    transform: scale(1.05);
+}
+
+/* --- Search Form Styles --- */
+.search-nav-form {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    background: #f1f3f5;
+    border-radius: 50px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.search-nav-form:focus-within {
+    border-color: #ff4757;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(255, 71, 87, 0.1);
+}
+
+.search-nav-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px 20px;
+    outline: none;
+    font-size: 1rem;
+    color: #333;
+}
+
+.search-nav-input::placeholder {
+    color: #aaa;
+}
+
+.search-nav-btn {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    /* Keeps button width stable when loading */
+}
+
+.search-nav-btn:hover:not(:disabled) {
+    background: #ff2a3f;
+}
+
+.search-nav-btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+/* --- Loader Animation --- */
+.search-btn-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid #fff;
+    border-radius: 50%;
+    animation: search-spin 1s linear infinite;
+}
+
+@keyframes search-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- Responsive CSS --- */
+@media screen and (max-width: 768px) {
+    .search-nav-form {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 477px) {
+    .search-nav-container {
+        gap: 8px;
+        /* Tighter spacing on mobile */
+    }
+
+    .search-nav-input {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .search-nav-btn {
+        padding: 0 15px;
+        font-size: 0.9rem;
+        min-width: 80px;
+    }
+
+    .search-nav-back-btn {
+        padding: 4px;
+    }
+}

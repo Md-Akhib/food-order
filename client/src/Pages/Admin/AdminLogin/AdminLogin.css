@@ -1,0 +1,131 @@
+/* Wrapper: center form on screen */
+.admin-login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+  padding: 1rem;
+}
+
+/* Form container */
+.admin-login-form {
+  background-color: #ffffff;
+  color: #6b7280;
+  max-width: 340px;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.admin-login-title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #1f2937;
+}
+
+/* Input field container */
+.admin-login-input-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(107, 114, 128, 0.1);
+  background-color: rgba(99, 102, 241, 0.05);
+  padding: 0 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Icons inside input */
+.admin-login-icon {
+  font-size: 1.25rem;
+  color: rgba(107, 114, 128, 0.6);
+}
+
+/* Input fields */
+.admin-login-input-box input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.65rem 0;
+  font-size: 0.9rem;
+  color: #374151;
+  flex: 1;
+}
+
+/* Password toggle button */
+.admin-password-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: rgba(107, 114, 128, 0.6);
+  transition: color 0.3s ease;
+}
+
+.admin-password-toggle:hover {
+  color: rgba(107, 114, 128, 1);
+}
+
+/* Remember & Forgot Password */
+.admin-login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+
+/* Checkbox section */
+.admin-login-remember {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Forgot Password link */
+.admin-login-forgot {
+  color: #2563eb;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Login button */
+.admin-login-button {
+  width: 100%;
+  background-color: #febd69;
+  color: white;
+  padding: 0.65rem 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-login-button:hover {
+  background-color: #ffa41c !important;
+}
+
+/* Signup text */
+.admin-login-signup-text {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+.admin-login-signup-text a {
+  color: #2563eb;
+  text-decoration: underline;
+  cursor: pointer;
+}

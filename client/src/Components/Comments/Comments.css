@@ -1,0 +1,244 @@
+/* --- General Section Setup --- */
+.comments-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.comments-title {
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 1rem;
+}
+
+/* --- Review Submission Form --- */
+.review-form-container {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    border: 1px solid #eee;
+}
+
+.review-form-container h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    color: #2d3436;
+}
+
+.interactive-stars {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1.2rem;
+}
+
+.star-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adjusting sizes since different icons have slightly different natural dimensions */
+.star-icon {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.star-icon.filled {
+    color: #ff4757;
+    font-size: 32px;
+}
+
+.star-icon.empty {
+    color: #bdc3c7;
+    font-size: 24px;
+}
+
+.star-label:hover .star-icon {
+    transform: scale(1.1);
+}
+
+.review-textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+    margin-bottom: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.review-textarea:focus {
+    outline: none;
+    border-color: #ff4757;
+}
+
+.submit-review-btn {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    min-width: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-review-btn:hover:not(:disabled) {
+    background: #ff6b81;
+}
+
+.submit-review-btn:disabled {
+    background: #ffb3ba;
+    cursor: not-allowed;
+}
+
+/* Loader Animation inside button */
+.btn-loader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- Reviews List --- */
+.reviews-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.no-reviews-msg {
+    color: #636e72;
+    font-style: italic;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.review-card {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.review-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.reviewer-image,
+.reviewer-avatar-fallback {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.reviewer-avatar-fallback {
+    background: #2d3436;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewer-name {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.1rem;
+    color: #2d3436;
+}
+
+.static-stars {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 0.3rem;
+}
+
+.static-star.filled {
+    color: #ff4757;
+    font-size: 20px;
+}
+
+.static-star.empty {
+    color: #dfe6e9;
+    font-size: 15px;
+}
+
+.review-date {
+    font-size: 0.85rem;
+    color: #b2bec3;
+}
+
+.review-body p {
+    margin: 0;
+    color: #636e72;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* --- Pagination Controls --- */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.page-btn {
+    padding: 0.5rem 1.2rem;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #2d3436;
+    transition: all 0.2s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+    background: #f1f2f6;
+    border-color: #ced6e0;
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-info {
+    color: #636e72;
+    font-weight: 500;
+    font-size: 0.95rem;
+}

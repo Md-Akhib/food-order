@@ -1,0 +1,242 @@
+.contact-wrapper {
+    background-color: #fcfcfc;
+    /* Very light beige mimicking the background */
+    width: 100%;
+}
+
+/* --- Section 1: Info Cards --- */
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.contact-info-card {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f9f9f9;
+}
+
+.contact-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background-color: #fffafb;
+    border: 2px solid #ffe3e6;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: #eb0029;
+}
+
+.contact-card-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #010a15;
+    margin-bottom: 15px;
+}
+
+.contact-card-text {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* --- Section 2: Map --- */
+.contact-map-section {
+    width: 100%;
+    margin-bottom: 0;
+    background-color: #e5e3df;
+    line-height: 0;
+}
+
+.contact-map-iframe {
+    display: block;
+    width: 100%;
+    height: 500px;
+}
+
+/* --- Section 3: Contact Form --- */
+.contact-form-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.contact-image-container {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 30px;
+    display: flex;
+}
+
+.contact-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 500px;
+}
+
+.contact-form-content {
+    flex: 1;
+    background-color: white;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+}
+
+.contact-form-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #010a15;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-input-row {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-input {
+    flex: 1;
+    padding: 16px 20px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s;
+    background-color: #fff;
+    font-family: inherit;
+    width: 100%;
+}
+
+.contact-select {
+    appearance: none;
+    cursor: pointer;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+    border-color: #eb0029;
+}
+
+.contact-textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333;
+    outline: none;
+    resize: vertical;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+/* --- Button & Loader --- */
+.contact-submit-btn {
+    background-color: #eb0029;
+    color: white;
+    border: none;
+    padding: 18px 30px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+    height: 56px;
+    /* Fixed height stops jumping during load */
+}
+
+.contact-submit-btn:hover:not(:disabled) {
+    background-color: #c90023;
+}
+
+.contact-submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Spinner Animation */
+.contact-btn-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid #fff;
+    border-radius: 50%;
+    animation: contact-spin 1s linear infinite;
+}
+
+@keyframes contact-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- Responsive Layout --- */
+@media screen and (max-width: 1024px) {
+    .contact-form-wrapper {
+        flex-direction: column;
+    }
+
+    .contact-image-container {
+        border-radius: 20px;
+        max-height: 350px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-input-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-form-content {
+        padding: 30px 25px;
+    }
+
+    .contact-map-iframe {
+        height: 350px;
+    }
+
+    .contact-image {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 477px) {
+    .contact-form-title {
+        font-size: 1.8rem;
+    }
+
+    .contact-info-card {
+        padding: 30px 20px;
+    }
+}

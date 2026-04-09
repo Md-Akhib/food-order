@@ -1,0 +1,309 @@
+/* --- General Section Setup --- */
+.menu-section {
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-header {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+}
+
+/* --- Categories with Smooth Scroll & Center Alignment --- */
+.categories-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.categories-wrapper {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0.5rem 1rem 1rem 1rem;
+    /* Hide scrollbar for a clean UI */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.categories-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    min-width: 80px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.category-item:hover,
+.category-item.active {
+    opacity: 1;
+    transform: translateY(-4px);
+}
+
+.category-image-box {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-size: 2rem;
+}
+
+.category-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-item h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+}
+
+.category-item.active h4 {
+    color: #ff4757;
+}
+
+/* --- Flexbox Menu Grid --- */
+.menu-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* --- Menu Cards --- */
+.menu-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    width: 18%;
+    cursor: pointer;
+}
+
+/* Background for Transparent PNGs */
+.card-image-wrapper {
+    width: 100%;
+    padding: 10px;
+    background: radial-gradient(circle, #f9f9f9 40%, #eaeaea 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    /* Ensures scaling image doesn't break card borders */
+}
+
+.card-image-wrapper img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+    filter: drop-shadow(0px 10px 8px rgba(0, 0, 0, 0.15));
+    transition: transform 0.4s ease;
+    /* Smooth transition for image scale */
+}
+
+/* Image Scale on Card Hover */
+.menu-card:hover .card-image-wrapper img {
+    transform: scale(1.15);
+}
+
+.card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.item-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 17px;
+    color: #2d3436;
+    font-weight: 700;
+}
+
+.item-price {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: #636e72;
+    font-weight: 600;
+}
+
+/* Action Row (Rating & Button) */
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+/* React Icons Single Star Rating Styling */
+.item-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.single-star-icon {
+    display: flex;
+    color: #FFA502;
+    /* Professional Gold */
+    font-size: 1.2rem;
+    margin-top: -2px;
+    /* Tweak to align icon nicely with the text */
+}
+
+.rating-value {
+    font-weight: 600;
+    color: #2d3436;
+    font-size: 1rem;
+}
+
+/* Square Add Button */
+.add-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #ff4757;
+    color: white;
+    border: none;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.add-btn:hover:not(:disabled) {
+    background: #ff6b81;
+    transform: scale(1.05);
+}
+
+.add-btn.loading {
+    background: #ff6b81;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Spinner for the Add Button */
+.btn-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- Media Queries for Responsive Flexbox Grid --- */
+@media (max-width: 850px) {
+    .menu-card {
+        width: 31%;
+    }
+}
+
+@media (max-width: 477px) {
+    .menu-card {
+        width: 100%;
+    }
+}
+
+/* --- Skeleton Loaders --- */
+.skeleton {
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    border-radius: 8px;
+    background-size: 200% 100%;
+    animation: 1.5s shimmer linear infinite;
+}
+
+.skeleton-cat-img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin-bottom: 0.8rem;
+}
+
+.skeleton-cat-text {
+    width: 50px;
+    height: 16px;
+}
+
+.skeleton-card {
+    border: 1px solid #f0f0f0;
+    box-shadow: none;
+}
+
+.skeleton-card-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 16px 16px 0 0;
+}
+
+.skeleton-card-info {
+    padding: 1.5rem;
+}
+
+.skeleton-title {
+    height: 24px;
+    width: 70%;
+    margin-bottom: 0.8rem;
+}
+
+.skeleton-price {
+    height: 20px;
+    width: 40%;
+    margin-bottom: 1.5rem;
+}
+
+.skeleton-action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skeleton-rating {
+    height: 24px;
+    width: 50px;
+}
+
+.skeleton-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+}
+
+@keyframes shimmer {
+    to {
+        background-position-x: -200%;
+    }
+}

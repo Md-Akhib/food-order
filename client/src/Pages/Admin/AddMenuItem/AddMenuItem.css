@@ -1,0 +1,233 @@
+/* Wrapper and Layout */
+.add-menu-wrapper {
+    background-color: #ffffff;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.add-menu-header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.add-menu-header h2 {
+    font-size: 26px;
+    color: #333;
+    margin: 0;
+}
+
+/* Form Layout */
+.add-menu-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-top-row {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.core-info-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Form Groups and Labels */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Inputs, Selects, and Textareas */
+.core-info-group input,
+.core-info-group select,
+.core-info-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+    font-family: inherit;
+}
+
+.core-info-group input:focus,
+.core-info-group select:focus,
+.core-info-group textarea:focus {
+    border-color: #e50050;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(229, 0, 80, 0.1);
+}
+
+.core-info-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Image Upload Area */
+.image-group {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.single-image-upload {
+    /* We keep this as flex to center the img if an image IS uploaded */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 320px;
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.single-image-upload:hover {
+    border-color: #e50050;
+    background-color: #fff5f7;
+}
+
+/* Updated Placeholder CSS */
+.image-placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centers vertically */
+    align-items: center;
+    /* Centers horizontally */
+    width: 100%;
+    /* Forces it to span the whole box */
+    height: 100%;
+    /* Forces it to span the whole box */
+    color: #888;
+    text-align: center;
+}
+
+.placeholder-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #aaa;
+}
+
+.preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Submit Area & Button */
+.form-submit-area {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #eee;
+    padding-top: 25px;
+    margin-top: 10px;
+}
+
+.submit-btn {
+    background-color: #e50050;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(229, 0, 80, 0.2);
+}
+
+.submit-btn:hover:not(:disabled) {
+    background-color: #c40045;
+    transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+    background-color: #ffa3c1;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* CSS Loader Spinner */
+.btn-loader {
+    width: 22px;
+    height: 22px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    border-top: 3px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .form-top-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-group {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .single-image-upload {
+        height: 250px;
+    }
+
+    .core-info-group {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .add-menu-wrapper {
+        padding: 20px;
+    }
+
+    .form-grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}

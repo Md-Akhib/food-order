@@ -1,0 +1,298 @@
+/* --- Base Container --- */
+.md-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.md-error-state {
+    text-align: center;
+    padding: 8rem 2rem;
+}
+
+.md-back-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #ff4757;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* --- Layout Grid (Mobile First) --- */
+.md-layout-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    gap: 30px;
+}
+
+/* --- Image Column --- */
+.md-img-col {
+    width: 37%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.md-png-backdrop {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: radial-gradient(circle at center, #f4f4f4 30%, #e0e0e0 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.md-main-img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.md-png-backdrop:hover .md-main-img {
+    transform: scale(1.05);
+}
+
+/* --- Information Column --- */
+.md-info-col {
+    display: flex;
+    flex-direction: column;
+    width: 57%;
+}
+
+.md-category-tag {
+    align-self: flex-start;
+    background: #ffeaa7;
+    color: #d63031;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.md-title {
+    font-size: 2rem;
+    color: #2d3436;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+}
+
+/* --- Rating Row Styling --- */
+.md-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.md-stars {
+    display: flex;
+    color: #FFA502;
+    font-size: 1.15rem;
+    gap: 2px;
+}
+
+.md-rating-number {
+    font-weight: 700;
+    color: #2d3436;
+    font-size: 1rem;
+    margin-left: 4px;
+}
+
+.md-review-count {
+    color: #636e72;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* --- Price & Action Area --- */
+.md-price-row {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.md-price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ff4757;
+}
+
+.md-stock-status {
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+}
+
+.md-stock-status.in-stock {
+    background: #e3fcef;
+    color: #00b894;
+}
+
+.md-stock-status.out-of-stock {
+    background: #ffeaea;
+    color: #d63031;
+}
+
+.md-action-area {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* --- REDESIGNED CART BUTTON --- */
+.md-cart-button {
+    min-width: 180px;
+    /* Reduced from 100% / 350px */
+    width: fit-content;
+    padding: 0.8rem 2rem;
+    background: #FF7A18;
+    /* Custom Orange */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.md-cart-button:hover:not(:disabled) {
+    background: #E66A12;
+    /* Matching darker hover shade */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 122, 24, 0.3);
+    /* Subtle orange glow */
+}
+
+.md-cart-button:disabled {
+    background: #ffd3b3;
+    /* Faded matching orange for disabled */
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* --- Loader Animation --- */
+.md-btn-loader {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: md-spin 0.8s linear infinite;
+}
+
+@keyframes md-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- Description Area --- */
+.md-description-area h3 {
+    font-size: 1.2rem;
+    color: #2d3436;
+    margin-bottom: 1rem;
+}
+
+.md-description-area p {
+    font-size: 1.05rem;
+    color: #636e72;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* --- Responsive Desktop Adjustments --- */
+@media (max-width: 768px) {
+    .md-img-col {
+        width: 100%;
+    }
+
+    .md-info-col {
+        width: 100%;
+    }
+
+    .md-cart-button {
+        width: 100%;
+        /* Goes full width only on very small mobile screens for easy tapping */
+    }
+}
+
+/* --- Skeleton Loaders --- */
+.md-shimmer {
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    border-radius: 8px;
+    background-size: 200% 100%;
+    animation: 1.5s md-shimmer-anim linear infinite;
+}
+
+.md-skeleton-img {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1 / 1;
+    border-radius: 15px;
+}
+
+.md-skeleton-tag {
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.md-skeleton-title {
+    width: 80%;
+    height: 48px;
+    margin-bottom: 0.5rem;
+}
+
+.md-skeleton-rating {
+    width: 200px;
+    height: 24px;
+    margin-bottom: 1.5rem;
+}
+
+.md-skeleton-price {
+    width: 150px;
+    height: 40px;
+    margin-bottom: 1rem;
+}
+
+.md-skeleton-btn {
+    width: 180px;
+    height: 50px;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+}
+
+.md-skeleton-desc {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 0.8rem;
+}
+
+.md-skeleton-desc.short {
+    width: 60%;
+}
+
+@keyframes md-shimmer-anim {
+    to {
+        background-position-x: -200%;
+    }
+}
