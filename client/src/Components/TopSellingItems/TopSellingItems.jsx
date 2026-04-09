@@ -26,10 +26,7 @@ const TopSellingItems = () => {
         };
 
         fetchTopSellingItems();
-    }, [axios]);
-
-    console.log(topSellingItems);
-    
+    }, [axios]);   
 
     // Handle add to cart with loading state
     const handleAddToCart = async (e, id) => {
