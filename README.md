@@ -2,10 +2,10 @@
 
 A premium, full-stack food ordering platform built with the MERN stack (MongoDB, Express, React, Node.js). This application features a seamless customer experience for browsing and ordering food, complemented by a powerful administrative dashboard for managing the restaurant's operations.
 
-![Application Screenshot](IMAGE_PATH_HERE)
+![Application Screenshot](./Image.png)
 
 ## 🚀 Live Demo
-Check out the live website: [Preview Link Here](YOUR_VERCEL_APP_LINK_HERE)
+Check out the live website: [Preview Link Here](https://food-order-amber-eight.vercel.app/)
 
 ---
 
