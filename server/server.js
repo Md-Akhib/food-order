@@ -22,8 +22,8 @@ const port = 3000;
 app.use(cookieParser());
 
 const allowedOrigins = [
-    'http://localhost:5173'
-    // , add frontend url here after hosting
+    'http://localhost:5173',
+    'https://food-order-amber-eight.vercel.app/'
 ];
 
 //Middlewares
